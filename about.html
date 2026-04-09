@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Dhoo Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">
+        <iconify-icon icon="mdi:card-text-outline"></iconify-icon>
+        Dhoo Blog
+    </div>
+
+    <!-- BURGER -->
+    <div class="burger" id="burger">
+        <iconify-icon icon="mdi:menu"></iconify-icon>
+    </div>
+
+    <!-- NAV -->
+    <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Cari...">
+        <iconify-icon icon="mdi:magnify"></iconify-icon>
+    </div>
+</header>
+
+<!-- About Page -->
+<section class="about-page">
+
+    <div class="about-container">
+
+        <!-- Gambar -->
+        <div class="about-img">
+            <img src="https://i.imgur.com/8Km9tLL.png" alt="About Me">
+        </div>
+
+        <!-- Konten -->
+        <div class="about-text">
+            <h1>Tentang Saya</h1>
+
+            <p>
+                Hai! Saya <b>M.Ridho Adha</b>, seorang mahasiswa yang memiliki 
+                minat besar di dunia <b>web development</b> dan teknologi.
+            </p>
+
+            <p>
+                Saya suka membangun tampilan website yang modern, responsif, 
+                dan nyaman digunakan. Saat ini saya sedang fokus mempelajari 
+                HTML, CSS, JavaScript, serta framework modern.
+            </p>
+
+            <p>
+                Blog ini saya gunakan sebagai tempat berbagi pengalaman, 
+                dokumentasi belajar, dan juga sebagai portfolio pribadi saya.
+            </p>
+
+            <!-- Info -->
+            <div class="about-info">
+                <span><iconify-icon icon="mdi:school"></iconify-icon> Mahasiswa</span>
+                <span><iconify-icon icon="mdi:code-tags"></iconify-icon> Frontend Developer</span>
+                <span><iconify-icon icon="mdi:map-marker"></iconify-icon> Indonesia</span>
+            </div>
+
+            <!-- Button -->
+            <button>Download CV</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Skill Section -->
+<section class="skills">
+    <h2>Skill Saya</h2>
+
+    <div class="skill-list">
+
+        <div class="skill">
+            <p>HTML</p>
+            <div class="bar"><span style="width: 90%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>CSS</p>
+            <div class="bar"><span style="width: 85%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>JavaScript</p>
+            <div class="bar"><span style="width: 70%"></span></div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h3>Dhoo Blog</h3>
+            <p>Blog pribadi tentang coding, teknologi, dan perjalanan belajar saya.</p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-links">
+            <h4>Menu</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+        </div>
+
+        <!-- Sosial Media -->
+        <div class="footer-social">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+                <a href="#"><iconify-icon icon="mdi:github"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:instagram"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:linkedin"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:twitter"></iconify-icon></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Dhoo Blog - M.Ridho Adha</p>
+    </div>
+
+</footer>
+<script>
+    /* BURGER */
+const burger = document.getElementById("burger");
+const navMenu = document.getElementById("navMenu");
+
+burger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+/* klik luar nutup */
+document.addEventListener("click", function(e) {
+    if (!burger.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove("active");
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - Dhoo Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">
+        <iconify-icon icon="mdi:card-text-outline"></iconify-icon>
+        Dhoo Blog
+    </div>
+
+    <!-- BURGER -->
+    <div class="burger" id="burger">
+        <iconify-icon icon="mdi:menu"></iconify-icon>
+    </div>
+
+    <!-- NAV -->
+    <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html" class="active">Blog</a>
+    </nav>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Cari...">
+        <iconify-icon icon="mdi:magnify"></iconify-icon>
+    </div>
+</header>
+
+<!-- Blog -->
+<section class="blog-page">
+
+    <h1>Artikel Saya</h1>
+
+    <div class="blog-container">
+
+        <!-- Artikel 1 -->
+        <div class="blog-card">
+            <img src="https://i.imgur.com/8Km9tLL.png">
+            <h3>Belajar HTML dari Nol</h3>
+            <p>Dasar membuat website untuk pemula.</p>
+            <a href="artikel.html">Baca Selengkapnya →</a>
+        </div>
+
+        <!-- Artikel 2 -->
+        <div class="blog-card">
+            <img src="https://i.imgur.com/8Km9tLL.png">
+            <h3>Belajar CSS Modern</h3>
+            <p>Membuat tampilan web lebih menarik.</p>
+            <a href="artikel.html">Baca Selengkapnya →</a>
+        </div>
+
+        <!-- Artikel 3 -->
+        <div class="blog-card">
+            <img src="https://i.imgur.com/8Km9tLL.png">
+            <h3>Tips Jadi Frontend Developer</h3>
+            <p>Langkah awal masuk dunia developer.</p>
+            <a href="artikel.html">Baca Selengkapnya →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h3>Dhoo Blog</h3>
+            <p>Blog pribadi tentang coding, teknologi, dan perjalanan belajar saya.</p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-links">
+            <h4>Menu</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+        </div>
+
+        <!-- Sosial Media -->
+        <div class="footer-social">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+                <a href="#"><iconify-icon icon="mdi:github"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:instagram"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:linkedin"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:twitter"></iconify-icon></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Dhoo Blog - M.Ridho Adha</p>
+    </div>
+
+</footer>
+<script>
+    /* BURGER */
+const burger = document.getElementById("burger");
+const navMenu = document.getElementById("navMenu");
+
+burger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+/* klik luar nutup */
+document.addEventListener("click", function(e) {
+    if (!burger.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove("active");
+    }
+});
+</script>
+</body>
+</html>

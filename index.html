@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhoo Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">
+        <iconify-icon icon="mdi:card-text-outline"></iconify-icon>
+        Dhoo Blog
+    </div>
+
+    <!-- BURGER -->
+    <div class="burger" id="burger">
+        <iconify-icon icon="mdi:menu"></iconify-icon>
+    </div>
+
+    <!-- NAV -->
+    <nav id="navMenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Cari...">
+        <iconify-icon icon="mdi:magnify"></iconify-icon>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-img">
+        <img src="images/wmremove-transformed.png" alt="Coding">
+    </div>
+
+    <div class="hero-text">
+        <h1>Hai, Saya <span>M.Ridho Adha 👋</span></h1>
+
+        <p>
+            Selamat datang di blog pribadi saya. Di sini saya berbagi cerita,
+            pengalaman, dan hal-hal yang saya pelajari dari dunia coding.
+        </p>
+
+        <p>
+            Blog ini juga menjadi tempat dokumentasi perjalanan belajar saya.
+        </p>
+
+        <a href="blog.html" class="btn">Mulai Membaca →</a>
+    </div>
+</section>
+
+<hr>
+
+<!-- Category -->
+<section class="category">
+    <div><iconify-icon icon="mdi:laptop"></iconify-icon> Coding</div>
+    <div><iconify-icon icon="mdi:cog"></iconify-icon> Teknologi</div>
+    <div><iconify-icon icon="mdi:lightbulb-outline"></iconify-icon> Tips</div>
+</section>
+
+<!-- Blog -->
+<section class="blog">
+    <h2>Artikel Terbaru</h2>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <img src="https://i.imgur.com/8Km9tLL.png">
+            <h3>Belajar HTML dari Nol</h3>
+            <p>Panduan lengkap untuk pemula.</p>
+            <a href="artikel.html">Baca Selengkapnya →</a>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://i.imgur.com/8Km9tLL.png">
+            <h3>Dasar CSS untuk Pemula</h3>
+            <p>Mengenal styling modern.</p>
+            <a href="artikel.html">Baca Selengkapnya →</a>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://i.imgur.com/8Km9tLL.png">
+            <h3>Tips Jadi Frontend Developer</h3>
+            <p>Langkah awal masuk dunia developer.</p>
+            <a href="artikel.html">Baca Selengkapnya →</a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h3>Dhoo Blog</h3>
+            <p>Blog pribadi tentang coding, teknologi, dan perjalanan belajar saya.</p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-links">
+            <h4>Menu</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+        </div>
+
+        <!-- Sosial Media -->
+        <div class="footer-social">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+                <a href="#"><iconify-icon icon="mdi:github"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:instagram"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:linkedin"></iconify-icon></a>
+                <a href="#"><iconify-icon icon="mdi:twitter"></iconify-icon></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Dhoo Blog - M.Ridho Adha</p>
+    </div>
+
+</footer>
+
+<!-- JS -->
+<script>
+
+/* BURGER */
+const burger = document.getElementById("burger");
+const navMenu = document.getElementById("navMenu");
+
+burger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+/* klik luar nutup */
+document.addEventListener("click", function(e) {
+    if (!burger.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove("active");
+    }
+});
+
+/* SEARCH */
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function() {
+    let filter = searchInput.value.toLowerCase();
+    let cards = document.querySelectorAll(".blog-card");
+
+    cards.forEach(card => {
+        let title = card.querySelector("h3").innerText.toLowerCase();
+        card.style.display = title.includes(filter) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
